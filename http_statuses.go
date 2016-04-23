@@ -32,7 +32,12 @@ func Forbidden(c *gin.Context, code int64, data interface{}) {
 
 // NotFound - 404 http status
 func NotFound(c *gin.Context, code int64, data interface{}) {
-	Error(c, http.StatusNotFound, "Not found", code, data)
+	Error(c, http.StatusNotFound, "Not Found", code, data)
+}
+
+// TooManyRequests - 429 http status
+func TooManyRequests(c *gin.Context, code int64, data interface{}) {
+	Error(c, http.StatusTooManyRequests, "Too Many Requests", code, data)
 }
 
 // InternalServerError - 500 http status
